@@ -1,5 +1,5 @@
 .container {
-  min-height: 100vh;
+  min-height: 10vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -81,6 +81,11 @@
 
 .logo {
   height: 1em;
+}
+
+.para {
+  font-stretch: expanded;
+  margin: 1rem 0 0 0;
 }
 
 @media (max-width: 600px) {
