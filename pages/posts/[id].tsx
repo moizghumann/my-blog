@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // 2nd step - fetch data for the posts id in the dynamic route
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const postsData = getPostData(params.id as string);
+    const postsData = await getPostData(params?.id as string);
     return {
         props: {
             postsData
@@ -36,6 +36,12 @@ const Post = ({ postsData }: PostsDataProps) => {
         <>
             <Layout>
                 {postsData.title}
+                <br />
+                {postsData.id}
+                <br />
+                {postsData.date}
+                <br />
+                <div dangerouslySetInnerHTML={{ __html: postsData.contentHtml }} />
                 <Link href={'/'} className={button.link}>
                     <Button>
                         Back to Home

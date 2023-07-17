@@ -1,18 +1,21 @@
 // importing modules - It's like bringing some helpful friends who know how to handle papers and organize them.
 
 // fs (File System) - Imagine fs as a friend who knows how to handle papers and files. They can read, write, and manipulate files on your computer, just like you can read, write, and draw on a piece of paper.
-import fs, { readdir, readdirSync } from 'fs';
+import fs from 'fs';
 
 // path - Path is like a guide who knows the way around a maze. They help you navigate through different folders and files on your computer by providing the correct paths and directions.
 import path from 'path';
 
 // matter - Matter is a clever friend who knows how to extract important information from a piece of paper. They specialize in reading the top part of the paper, where important details like titles, dates, and authors are written. They can quickly find and understand that information for you.
 import matter, { GrayMatterFile } from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
 
 export interface PostData {
     id: string;
     date?: string;
-    title?: string; // Add the necessary properties here
+    title?: string;
+    contentHtml?: string // Add the necessary properties here
     // Add any other properties you expect to extract from the markdown files
 }
 
@@ -106,15 +109,22 @@ export function getAllPostsIDs() {
     })
 }
 
-export function getPostData(id: string) {
+export async function getPostData(id: string) {
     const fullPath = path.join(postsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf-8');
     // Use gray-matter to parse the post metadata section
-    const fileContentsMatter = matter(fileContents) as GrayMatterFile<string>
-    // combine the data with the id
+    const fileContentsMatter = matter(fileContents)
+    // Convert the Markdown content (fileContentsMatter.content) into HTML
+    // `remark()` creates a new remark processor, and `.use(html)` enables the transformation of Markdown to HTML.
+    const processedContent = await remark().use(html).process(fileContentsMatter.content);
+    // Convert the processed HTML content into a string
+    // `processedContent` is an asynchronous Node stream. To obtain the final HTML content as a string, we use `.toString()`.
+    const contentHtml = processedContent.toString();
+    // combine the data with the id and contentHtml
     return {
         id,
-        ...fileContentsMatter.data
+        contentHtml,
+        ...(fileContentsMatter.data as { date: string; title: string })
     }
 }
 
