@@ -7,13 +7,16 @@ import { GetStaticProps } from 'next';
 import Button from '../components/Button';
 import Link from 'next/link';
 import button from '../components/styles/Button.module.css'
-import usePokemon, { PokemonData } from '../lib/pokemon';
+import usePokemon from '../lib/pokemon';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 
+
 // getStaticProps can only be exported from a page. You can’t export it from non-page files.
-export const getStaticProps: GetStaticProps = () => {
+// As getStaticProps runs only on the server-side, it will never run on the client-side.
+export const getStaticProps: GetStaticProps = async () => {
 
   // const queryClient = new QueryClient()
+  // the prefetchQuery function is used in getStaticProps for initial data fetching during server-side rendering (SSR) or static-site rendering (SSG) at build time, while the useQuery hook is responsible for cache management and handling subsequent data fetches on the client-side after hydration.
   // await queryClient.prefetchQuery(['posts'], usePokemon)
 
   const allPostsData = getSortedPostsData();
