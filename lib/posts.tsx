@@ -85,6 +85,7 @@ export function getAllPostsID() {
     return postNames.map(postName => {
         // The returned list is not just an array of strings — it must be an array of objects
         return {
+            // Each object must have the params key and contain an object with the id key (because we’re using [id] in the file name). Otherwise, getStaticPaths will fail.
             params: {
                 id: postName.replace(/\.md$/, '')
             }
