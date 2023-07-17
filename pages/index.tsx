@@ -57,11 +57,11 @@ const Home = ({ allPostsData }: HomeProps) => {
           <h2 className={utilStyles.headingLg}>Blog</h2>
           <ul className={utilStyles.list}>
             {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
+              <Link href={`/posts/${id}`} className={utilStyles.listItem} key={id}>
                 {title}
                 <br />
                 {date}
-              </li>
+              </Link>
             ))}
           </ul>
 
@@ -73,11 +73,11 @@ const Home = ({ allPostsData }: HomeProps) => {
           </ul> */}
         </section>
 
-        <Button>
+        {/* <Button>
           <Link href={'/'} className={button.link}>
             Back to Home
           </Link>
-        </Button>
+        </Button> */}
 
       </Layout>
     </div>

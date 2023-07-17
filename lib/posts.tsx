@@ -80,7 +80,7 @@ export function getSortedPostsData() {
     });
 }
 
-export function getAllPostsID() {
+export function getAllPostsIDs() {
     const postNames = fs.readdirSync(postsDirectory);
     return postNames.map(postName => {
         // The returned list is not just an array of strings — it must be an array of objects
@@ -104,6 +104,18 @@ export function getAllPostsID() {
         //   }
         // ]
     })
+}
+
+export function getPostData(id: string) {
+    const fullPath = path.join(postsDirectory, `${id}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf-8');
+    // Use gray-matter to parse the post metadata section
+    const fileContentsMatter = matter(fileContents) as GrayMatterFile<string>
+    // combine the data with the id
+    return {
+        id,
+        ...fileContentsMatter.data
+    }
 }
 
 {/* Importing Modules:
