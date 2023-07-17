@@ -4,8 +4,12 @@ import type { AppProps } from "next/app"
 import { useState } from "react"
 import '../styles/globals.css'
 
-// Apart from running the following code on the client, Next.js runs it on the server as well
+// To support caching queries on the server and set up hydration
+// Caching queries on the server means storing data(cache) fetched from the server so it can be quickly reused when the same information is needed again, saving time and reducing server workload.
+// Setting up hydration means providing your web app with cached data from the server immediately when it loads in the user's browser, avoiding extra requests and speeding up the app's initial display.
+// Now you are ready to prefetch some data in your pages with either getStaticProps (for SSG) or getServerSideProps (for SSR).
 
+// Apart from running the following code on the client, Next.js runs it on the server as well
 
 // MyApp takes two props, Component and pageProps of type AppProps
 const MyApp = ({ Component, pageProps }: AppProps) => {

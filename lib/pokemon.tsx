@@ -15,6 +15,7 @@ const fetchingThePokemon = async () => {
     return res.data;
 }
 
+// the prefetchQuery function is used in getStaticProps for initial data fetching during server-side rendering (SSR) at build time, while the useQuery hook is responsible for cache management and handling subsequent data fetches on the client-side after hydration.
 const usePokemon = () => {
     return useQuery<PokemonData>({
         queryKey: ['pokemon'],
