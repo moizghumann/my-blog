@@ -1,7 +1,7 @@
 // importing modules - It's like bringing some helpful friends who know how to handle papers and organize them.
 
 // fs (File System) - Imagine fs as a friend who knows how to handle papers and files. They can read, write, and manipulate files on your computer, just like you can read, write, and draw on a piece of paper.
-import fs from 'fs';
+import fs, { readdir, readdirSync } from 'fs';
 
 // path - Path is like a guide who knows the way around a maze. They help you navigate through different folders and files on your computer by providing the correct paths and directions.
 import path from 'path';
@@ -78,6 +78,31 @@ export function getSortedPostsData() {
             return -1;
         }
     });
+}
+
+export function getAllPostsID() {
+    const postNames = fs.readdirSync(postsDirectory);
+    return postNames.map(postName => {
+        // The returned list is not just an array of strings — it must be an array of objects
+        return {
+            params: {
+                id: postName.replace(/\.md$/, '')
+            }
+        }
+        // Returns an array that looks like this:
+        // [
+        //   {
+        //     params: {
+        //       id: 'ssg-ssr'
+        //     }
+        //   },
+        //   {
+        //     params: {
+        //       id: 'pre-rendering'
+        //     }
+        //   }
+        // ]
+    })
 }
 
 {/* Importing Modules:
