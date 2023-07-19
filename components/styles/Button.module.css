@@ -68,9 +68,14 @@ button.buttonSax:active::before {
 }
 
 .link {
+
     font-size: 0.93em;
     font-weight: 740;
     color: var(--text);
     text-transform: uppercase;
     font-family: inherit;
+}
+
+.link a:hover {
+    text-decoration: none;
 }

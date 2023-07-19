@@ -16,11 +16,16 @@ body {
 
 a {
   color: #CEFF1A;
+  background-image: linear-gradient(to bottom, transparent 82%, #E2FF76 0);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
   text-decoration: none;
+  transition: background-size .4s ease;
 }
 
 a:hover {
-  text-decoration: none;
+  background-size: 100% 100%;
+  cursor: pointer;
 }
 
 img {

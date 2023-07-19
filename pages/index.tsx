@@ -9,6 +9,7 @@ import Link from 'next/link';
 import button from '../components/styles/Button.module.css'
 import usePokemon from '../lib/pokemon';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
+import BlogDate from '../components/Date';
 
 
 // getStaticProps can only be exported from a page. You can’t export it from non-page files.
@@ -47,8 +48,8 @@ const Home = ({ allPostsData }: HomeProps) => {
 
         <section>
           <div className={utilStyles.headingMd}>Hey! Im <strong>Moiz</strong>, a junior front end developer and a creative artist.</div>
-          <div className={utilStyles.lightText}>You can contact me on
-            <a href='https://twitter.com/ghumanmoiz'> Twitter</a>
+          <div className={utilStyles.lightText}>You can contact me on <span> </span>
+            <a href='https://twitter.com/ghumanmoiz'>Twitter</a>
             !
           </div>
         </section>
@@ -60,7 +61,10 @@ const Home = ({ allPostsData }: HomeProps) => {
               <Link href={`/posts/${id}`} className={utilStyles.listItem} key={id}>
                 {title}
                 <br />
-                {date}
+                <small className={utilStyles.lightText}>
+                  <BlogDate date={date} />
+                </small>
+                <br />
               </Link>
             ))}
           </ul>

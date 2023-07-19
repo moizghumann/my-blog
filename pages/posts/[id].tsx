@@ -4,6 +4,9 @@ import Layout from "../../components/layout";
 import { PostData, getAllPostsIDs, getPostData } from "../../lib/posts";
 import button from '../../components/styles/Button.module.css'
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
+import utils from '../../styles/utils.module.css'
+import BlogDate from "../../components/Date";
 
 // When you export a function called getStaticPaths (Static Site Generation) from a page that uses dynamic routes, Next.js will statically pre-render all the paths specified by getStaticPaths.
 
@@ -12,15 +15,17 @@ interface PostsDataProps {
 }
 
 // 1st step - get all the paths for dynamic routing
+// Use `getStaticPaths` to fetch an array of blog IDs 
 export const getStaticPaths: GetStaticPaths = async () => {
     const paths = getAllPostsIDs();
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 
 // 2nd step - fetch data for the posts id in the dynamic route
+// use `getStaticProps` to fetch data for each blog. 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const postsData = await getPostData(params?.id as string);
     return {
@@ -35,13 +40,17 @@ const Post = ({ postsData }: PostsDataProps) => {
     return (
         <>
             <Layout>
-                {postsData.title}
-                <br />
-                {postsData.id}
-                <br />
-                {postsData.date}
-                <br />
-                <div dangerouslySetInnerHTML={{ __html: postsData.contentHtml }} />
+                <Head>
+                    <title>{postsData.title}</title>
+                </Head>
+                <article>
+                    <h1 className={utils.headingXl}>{postsData.title}</h1>
+                    <div className={utils.lightText}>
+                        <BlogDate date={postsData.date} />
+                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: postsData.contentHtml }} />
+                </article>
+
                 <Link href={'/'} className={button.link}>
                     <Button>
                         Back to Home
