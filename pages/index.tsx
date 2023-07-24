@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import utilStyles from '../styles/utils.module.css'
 import { PostData, getSortedPostsData } from '../lib/posts';
 import { GetStaticProps } from 'next';
@@ -10,18 +9,17 @@ import button from '../components/styles/Button.module.css'
 import usePokemon from '../lib/pokemon';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import BlogDate from '../components/Date';
-
+import NavBar from '../components/NavBar';
+import styles from '../styles/Home.module.css';
+import Hero from '../components/Hero';
 
 // getStaticProps can only be exported from a page. You can’t export it from non-page files.
 // As getStaticProps runs only on the server-side, it will never run on the client-side.
 export const getStaticProps: GetStaticProps = async () => {
-
   // const queryClient = new QueryClient()
   // the prefetchQuery function is used in getStaticProps for initial data fetching during server-side rendering (SSR) or static-site rendering (SSG) at build time, while the useQuery hook is responsible for cache management and handling subsequent data fetches on the client-side after hydration.
   // await queryClient.prefetchQuery(['posts'], usePokemon)
-
   const allPostsData = getSortedPostsData();
-
   return {
     props: {
       allPostsData,
@@ -35,56 +33,13 @@ interface HomeProps {
 }
 
 const Home = ({ allPostsData }: HomeProps) => {
-
   // const { data, isLoading } = usePokemon();
-
   return (
-    <div className={styles.container}>
+    <>
       <Layout>
-
-        <Head>
-          <title>Moiz's Crib</title>
-        </Head>
-
-        <section>
-          <div className={utilStyles.headingMd}>Hey! Im <strong>Moiz</strong>, a junior front end developer and a creative artist.</div>
-          <div className={utilStyles.lightText}>You can contact me on <span> </span>
-            <a href='https://twitter.com/ghumanmoiz'>Twitter</a>
-            !
-          </div>
-        </section>
-
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Blog</h2>
-          <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title }) => (
-              <Link href={`/posts/${id}`} className={utilStyles.listItem} key={id}>
-                {title}
-                <br />
-                <small className={utilStyles.lightText}>
-                  <BlogDate date={date} />
-                </small>
-                <br />
-              </Link>
-            ))}
-          </ul>
-
-          {/* <ul>
-            {data ?
-              data.results.map(pokemon => <li>{pokemon.name}</li>) :
-              isLoading ? <p>Loading...</p> :
-                <p>Unknown Error</p>}
-          </ul> */}
-        </section>
-
-        {/* <Button>
-          <Link href={'/'} className={button.link}>
-            Back to Home
-          </Link>
-        </Button> */}
-
+        <Hero />
       </Layout>
-    </div>
+    </>
   )
 }
 
