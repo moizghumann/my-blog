@@ -8,7 +8,7 @@ const Showcase = () => {
     return (
         <>
             <Section>
-                <h2 className='text-6xl text-center font-semibold tracking-tight text-[#CEFF1A] flex-shrink-0 opacity-90 py-[3rem]'>
+                <h2 className='text-6xl text-center font-semibold tracking-tight text-[#CEFF1A] flex-shrink-0 opacity-90 pb-[2rem]'>
                     Some of my projects
                 </h2>
                 <div className='grid gap-3 grid-cols-9'>
