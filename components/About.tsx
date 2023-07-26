@@ -16,8 +16,7 @@ const About = () => {
                         priority
                     />
                 </div>
-                <div className='flex flex-col justify-around items-start'>
-                    <h1 className=' text-9xl text-black font-semibold tracking-tight'>stoic</h1>
+                <div className='flex flex-col justify-around items-start border-2 border-black rounded-xl p-5'>
                     <h1 className=' text-9xl text-black font-semibold tracking-tight'>stoic</h1>
                     <h1 className=' text-9xl text-black font-semibold tracking-tight'>stoic</h1>
                     <h1 className=' text-9xl text-black font-semibold tracking-tight'>stoic</h1>
