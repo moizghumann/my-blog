@@ -14,6 +14,9 @@ import styles from '../styles/Home.module.css';
 import Hero from '../components/Hero';
 import Showcase from '../components/Showcase';
 import About from '../components/About';
+import Services from '../components/Services';
+import Motto from '../components/Motto';
+import Contact from '../components/Contact';
 
 // getStaticProps can only be exported from a page. You can’t export it from non-page files.
 // As getStaticProps runs only on the server-side, it will never run on the client-side.
@@ -42,6 +45,9 @@ const Home = ({ allPostsData }: HomeProps) => {
         <Hero />
         <Showcase />
         <About />
+        <Services />
+        <Motto />
+        <Contact />
       </Layout>
     </>
   )

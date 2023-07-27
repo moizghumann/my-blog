@@ -11,7 +11,8 @@ const About = () => {
                     <Image src={anotherme}
                         alt='moiz'
                         fill={true}
-                        objectFit='cover'
+
+                        style={{ objectFit: "cover" }}
                         quality={100}
                         priority
                     />
