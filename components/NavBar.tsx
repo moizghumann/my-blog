@@ -1,12 +1,11 @@
 import React from 'react'
-import styles from './styles/NavBar.module.css'
 import Image from 'next/image'
 import logo from '../public/images/moiz.jpg'
 
 const NavBar = () => {
     return (
         <nav className='fixed w-full h-fit px-[6rem] z-10  mb-5'>
-            <div className='flex flex-row justify-between items-center h-20 w-full px-6 ring-2 ring-[#E6E1C5] rounded-3xl mt-7 overflow-x-hidden'>
+            <div className='flex flex-row justify-between items-center h-20 w-full px-6 ring-2 ring-[#E6E1C5] rounded-3xl mt-7 overflow-x-hidden backdrop-blur-sm'>
                 <div>
                     <Image
                         src={logo}
@@ -17,7 +16,15 @@ const NavBar = () => {
                         priority
                     />
                 </div>
-                <div>right</div>
+
+                <div className=' flex items-center gap-6'>
+                    <text className=''>Blog</text>
+                    <text>Services</text>
+                    <text>About</text>
+                    <div className=' flex justify-center items-center py-2 px-3 bg-[#d7f553c9] rounded-lg'>
+                        <text className='text-[#0E1421]'>Contact me</text>
+                    </div>
+                </div>
             </div>
         </nav>
     )

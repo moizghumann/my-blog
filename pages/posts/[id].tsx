@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Button from "../../components/Button";
-import Layout from "../../components/layout";
+import Layout from "../../components/Layout";
 import { PostData, getAllPostsIDs, getPostData } from "../../lib/posts";
 import button from '../../components/styles/Button.module.css'
 import { GetStaticPaths, GetStaticProps } from "next";
