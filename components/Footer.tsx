@@ -1,8 +1,33 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+import twitter from '../public/socials/twitter-svgrepo-com (2).svg'
+import linkedin from '../public/socials/linkedin-svgrepo-com (2).svg'
+import github from '../public/socials/github-142-svgrepo-com (1).svg'
+import copyright from '../public/copyright-svgrepo-com (3).svg'
 
 const Footer = () => {
     return (
-        <div className=' mx-10 rounded-md p-5 border-2 bg-yellow-400'>
+        <div className=' flex flex-col justify-center items-center mb-5'>
+            <div className=' mx-10 w-full rounded-2xl px-5 mb-5 h-20 bg-[#B8DE1E] flex flex-row justify-between items-center'>
+                <div className='flex flex-row justify-center pl-1 items-center bg-[#0E1421] rounded-lg h-8 w-8'> <h1 className=' text-lg font-semibold text-[#B8DE1E]'>m.</h1></div>
+
+                <div className=' flex flex-row justify-center items-center gap-3'>
+                    <Link href={'https://twitter.com/ghumanmoiz'}>
+                        <Image src={twitter} alt='twitter link' height={30} width={30} />
+                    </Link>
+                    <Link href={'https://www.linkedin.com/in/moiz-shaukat-7ba6991ab/'}>
+                        <Image src={linkedin} alt='twitter link' height={30} width={30} />
+                    </Link>
+                    <Link href={'https://github.com/moizghumann'}>
+                        <Image src={github} alt='twitter link' height={30} width={30} />
+                    </Link>
+                </div>
+            </div>
+
+
+            <p className=' flex items-center opacity-70 text-sm'>Copyright <Image src={copyright} alt='copright icon' height={15} width={15} /> Moiz's Portfolio 2023. Made with <Link href={'https://tailwindcss.com/'}>  Tailwindcss</Link>, <Link href={'https://nextjs.org/'}>Next.js and 💜 by Moiz Ghuman</Link></p>
+
 
         </div>
     )
