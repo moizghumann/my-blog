@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from './Slider';
 import Section from './Section';
 import Button from './Button';
+import Link from 'next/link';
 
 const Hero = () => {
     return (
@@ -12,9 +13,11 @@ const Hero = () => {
                         Moiz focuses on crafting meaningful experiences as an independent front-end developer
                     </h1>
                     <div className=' flex flex-row justify-between gap-4'>
-                        <Button>
-                            Read my Blog
-                        </Button>
+                        <Link href={'/blogs'}>
+                            <Button>
+                                Read my Blog
+                            </Button>
+                        </Link>
                         <Button>
                             Poke me
                         </Button>
