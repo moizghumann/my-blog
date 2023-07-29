@@ -29,12 +29,13 @@ const Footer = () => {
             <p className=' flex items-center opacity-70 text-sm'>
                 Copyright
                 <Image src={copyright} alt='copright icon' height={15} width={15} className='mx-[4px]' /> Moiz's Portfolio 2023. Made with
-                <Link href={'https://tailwindcss.com/'} className='ml-[4px]'>
+                <a href={'https://tailwindcss.com/'} className='ml-[4px]'>
                     Tailwindcss,
-                </Link>
-                <Link href={'https://nextjs.org/'} className='ml-[4px]'>
-                    Next.js and 💜 by Moiz Ghuman
-                </Link>
+                </a>
+                <a href={'https://nextjs.org/'} className='mx-[4px]'>
+                    Next.js
+                </a>
+                and 💜 by Moiz Ghuman
             </p>
 
 
