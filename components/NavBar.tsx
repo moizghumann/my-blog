@@ -21,7 +21,7 @@ const NavBar = () => {
                 </div>
 
                 <div className=' flex items-center gap-6'>
-                    <text className=''>Blog</text>
+                    <Link href={'/blogs'} className=' font-normal hover:font-semibold'>Blog</Link>
                     <text>Services</text>
                     <text>About</text>
                     <div className=' flex justify-center items-center py-2 px-3 bg-[#d7f553c9] rounded-lg'>
