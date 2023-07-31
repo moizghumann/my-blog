@@ -10,6 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      xss: "375px",
+      xs: "450px",
+      xt: "768px",
+      xl: "1024px",
+      xm: "1440px"
+    }
   },
   plugins: [],
 }
