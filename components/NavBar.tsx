@@ -20,8 +20,10 @@ const NavBar = () => {
                     </Link>
                 </div>
 
-                <div className=' flex items-center gap-6'>
-                    <Link href={'/blogs'} className=' font-normal hover:font-semibold'>Blog</Link>
+                <div className=' flex items-center gap-6 uppercase'>
+                    <Link href={'/blogs'} className=' font-normal hover:font-semibold'>
+                        Blogs
+                    </Link>
                     <text>Services</text>
                     <text>About</text>
                     <div className=' flex justify-center items-center py-2 px-3 bg-[#d7f553c9] rounded-lg'>

@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import React from 'react'
 import lofi from '../public/blogImages/Lofi Apartments.jpeg'
-import Badge from './Badge'
+import Image from 'next/image'
 
 const BlogCard = () => {
     return (
@@ -18,9 +17,9 @@ const BlogCard = () => {
                 />
             </div>
 
-            <div className="pt-5">
+            <div className="pt-5 pr-2">
                 <h6 className=' text-sm font-medium uppercase'>Tech</h6>
-                <h5 className="mb-2 text-2xl font-bold tracking-tight ">
+                <h5 className="mb-2 text-2xl font-medium tracking-tight ">
                     Noteworthy technology acquisitions 2021
                 </h5>
 
