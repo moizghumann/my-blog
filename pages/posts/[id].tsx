@@ -9,7 +9,6 @@ import utils from '../../styles/utils.module.css'
 import BlogDate from "../../components/Date";
 
 // When you export a function called getStaticPaths (Static Site Generation) from a page that uses dynamic routes, Next.js will statically pre-render all the paths specified by getStaticPaths.
-
 interface PostsDataProps {
     postsData: PostData
 }

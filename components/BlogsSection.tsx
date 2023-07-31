@@ -6,9 +6,10 @@ const BlogsSections = () => {
     return (
         <>
             <BlogsHeading heading={'My thoughts, learnings, and journey through these blogs'} />
-            <div className='  w-full m-0 p-0'>
+            <div className='  w-full m-0 p-0 mb-20'>
                 <BlogsGrid />
             </div>
+
         </>
     )
 }

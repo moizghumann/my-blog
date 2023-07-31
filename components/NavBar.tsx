@@ -14,14 +14,14 @@ const NavBar = () => {
                             alt='logo'
                             height={50}
                             width={50}
-                            className='cursor-pointer rounded-full'
+                            className='cursor-pointer rounded-full '
                             priority
                         />
                     </Link>
                 </div>
 
                 <div className=' flex items-center gap-6 uppercase'>
-                    <Link href={'/blogs'} className=' font-normal hover:font-semibold'>
+                    <Link href={'/blogs'} className=' font-normal hover:text-[#]'>
                         Blogs
                     </Link>
                     <text>Services</text>
