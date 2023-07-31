@@ -1,20 +1,16 @@
 import React from 'react'
-import BlogCard from './BlogCard'
+import BlogsHeading from './BlogsHeading'
+import BlogsGrid from './BlogsGrid'
 
-const BlogsSection = () => {
+const BlogsSections = () => {
     return (
-        <div className='  w-full m-0 p-0'>
-            <div className=' grid grid-cols-4 gap-8 mt-44 xl:grid-cols-4 xm:grid-cols-4 xt:grid-cols-3 xs:grid-cols-1    '>
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
+        <>
+            <BlogsHeading heading={'My thoughts, learnings, and journey through these blogs'} />
+            <div className='  w-full m-0 p-0'>
+                <BlogsGrid />
             </div>
-        </div>
+        </>
     )
 }
 
-export default BlogsSection
+export default BlogsSections
