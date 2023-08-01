@@ -15,7 +15,6 @@ const Blogs = () => {
                         Back to Moon
                     </Button>
                 </Link>
-
             </Section>
         </Layout>
     )

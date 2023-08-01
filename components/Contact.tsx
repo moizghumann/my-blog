@@ -6,7 +6,7 @@ const Contact = () => {
         <Section>
             <div className='  flex flex-col justify-center items-center mb-20'>
                 <div className=' p-2 px-4 pb-4 border-2 hover:bg-[#E6E1C5] hover:cursor-pointer border-[#E6E1C5] rounded-2xl mx-4 mt-10 mb-6 w-fit'>
-                    <h1 className='text-[#CEFF1A] hover:text-[#0E1421]  text-8xl font-medium tracking-tight text-center'>
+                    <h1 className='text-[#CEFF1A] hover:text-[#0E1421]  text-7xl font-medium tracking-tight text-center'>
                         moizghuman@gmail.com
                     </h1>
                 </div>

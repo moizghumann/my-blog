@@ -7,22 +7,32 @@ import Link from 'next/link';
 const Hero = () => {
     return (
         <Section>
-            <div className=' flex flex-col justify-center items-center mb-10 mt-10 h-screen '>
-                <div className='flex flex-col justify-around items-center w-[69%] flex-grow mt-auto pt-20'>
-                    <h1 className='text-7xl text-center font-semibold tracking-tight text-[#CEFF1A] opacity-90'>
-                        Moiz focuses on crafting meaningful experiences as an independent front-end developer
-                    </h1>
-                    <div className=' flex flex-row justify-between gap-4'>
-                        <Link href={'/blogs'}>
-                            <Button>
-                                Read my Blog
-                            </Button>
-                        </Link>
+            <div className=' block mt-56 mb-20'>
+
+
+
+
+                <h1 className='text-7xl mx-auto text-center font-semibold max-w-4xl tracking-tight text-[#e6e1c5] opacity-90'>
+                    Moiz focuses on crafting meaningful experiences as an
+                    <span className='text-[#CEFF1A] ml-4'>
+                        independent front-end developer
+                    </span>
+
+                </h1>
+
+                <div className=' flex flex-row justify-center gap-4 mt-14'>
+                    <Link href={'/blogs'}>
                         <Button>
-                            Poke me
+                            Read my Blog
                         </Button>
-                    </div>
-                    <Slider />
+                    </Link>
+                    <Button>
+                        Poke me
+                    </Button>
+
+
+
+
                 </div>
 
             </div>
