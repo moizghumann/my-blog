@@ -20,8 +20,8 @@ const NavBar = () => {
                     </Link>
                 </div>
 
-                <div className=' flex items-center gap-6 uppercase'>
-                    <Link href={'/blogs'} className=' font-normal hover:text-[#]'>
+                <div className=' flex items-center gap-6 uppercase font-medium'>
+                    <Link href={'/blogs'} className=' hover:text-[#b8de1e]'>
                         Blogs
                     </Link>
                     <text>Services</text>
