@@ -24,9 +24,7 @@ const NavBar = () => {
                     <Link href={'/blogs'} className=' hover:text-[#b8de1e]'>
                         Blogs
                     </Link>
-                    <Link href={'/'} className=' hover:text-[#b8de1e]'>
-                        Services
-                    </Link>
+                    <text>Services</text>
 
                     <text>About</text>
                     <div className=' flex justify-center items-center py-2 px-3 bg-[#d7f553c9] rounded-lg'>
