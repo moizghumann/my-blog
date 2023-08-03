@@ -9,15 +9,15 @@ const Showcase = () => {
         <>
             <Section>
                 <div className=' grid place-items-center'>
-                    <h2 className='text-6xl text-center font-semibold tracking-tight text-[#CEFF1A] flex-shrink-0 opacity-90 '>
+                    <h2 className='text-6xl text-center font-semibold tracking-tight text-[#CEFF1A] opacity-90 '>
                         Some of my projects
                     </h2>
-                    <p className=' text-lg opacity-70 text-[#d1cdb5] text-center mt-6 w-[40%]'>
+                    <p className=' text-lg opacity-90 text-[#e6e1c5] text-center mt-4 w-[45%] tracking-tight'>
                         While Moiz has worked on a couple of other projects as well, here a few of them
                     </p>
                 </div>
 
-                <div className='grid gap-3 grid-cols-9 mt-10'>
+                <div className='grid gap-3 grid-cols-9 mt-11'>
                     <div className='col-span-4 bg-slate-100 rounded-xl'>
                         <div className=' p-8 pb-14 flex flex-col justify-between items-start h-full'>
 
