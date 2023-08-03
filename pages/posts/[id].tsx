@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Button from "../../components/Button";
-import Layout from "../../components/layout";
+import Layout from "../../components/Layout";
 import { PostData, getAllPostsIDs, getPostData } from "../../lib/posts";
 import button from '../../components/styles/Button.module.css'
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -9,7 +9,6 @@ import utils from '../../styles/utils.module.css'
 import BlogDate from "../../components/Date";
 
 // When you export a function called getStaticPaths (Static Site Generation) from a page that uses dynamic routes, Next.js will statically pre-render all the paths specified by getStaticPaths.
-
 interface PostsDataProps {
     postsData: PostData
 }

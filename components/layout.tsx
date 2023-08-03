@@ -1,8 +1,7 @@
 import { ReactNode } from 'react'
-import styles from './styles/Layout.module.css'
 import Head from 'next/head'
-import Image from 'next/image'
 import NavBar from './NavBar';
+import Footer from './Footer';
 
 
 const name = 'Moiz Ghuman';
@@ -17,10 +16,7 @@ const Layout = ({ children }: Props) => {
         <>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
-                <meta
-                    name="description"
-                    content="Learn how to build a personal website using Next.js"
-                />
+                <meta name="description" content="Learn how to build a personal website using Next.js" />
                 <meta
                     property="og:image"
                     content={`https://og-image.vercel.app/${encodeURI(
@@ -30,12 +26,16 @@ const Layout = ({ children }: Props) => {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
+
             <header>
                 <NavBar />
             </header>
             <main>
                 {children}
             </main>
+            <footer>
+                <Footer />
+            </footer>
         </>
     )
 }

@@ -1,13 +1,18 @@
 import React from 'react'
 import Section from './Section'
+import Badge from './Badge'
+
+
 
 const Motto = () => {
     return (
         <Section>
-            <div className='  flex flex-col justify-center items-center'>
-                <div className='  bg-[#374151] flex flex-col justify-center items-center w-6/12'>
-                    <h3>Motto</h3>
-                    <h1 className=' text-6xl font-semibold tracking-tight text-center'>Design experiences that people never forget</h1>
+            <div className='  flex flex-col justify-center items-center h-screen'>
+                <div className=' flex flex-col justify-center items-center w-9/12'>
+                    <Badge badgeText='Motto' />
+                    <h1 className=' text-8xl font-semibold tracking-tight text-center mt-4'>
+                        Design experiences that people never forget
+                    </h1>
                 </div>
             </div>
         </Section>

@@ -3,6 +3,12 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import type { AppProps } from "next/app"
 import { useState } from "react"
 import '../styles/globals.css'
+import { Inter } from '@next/font/google'
+
+const inter = Inter({
+    subsets: ['latin'],
+    variable: '--font-rubik'
+})
 
 // To support caching queries on the server and set up hydration
 // Caching queries on the server means storing data(cache) fetched from the server so it can be quickly reused when the same information is needed again, saving time and reducing server workload.
@@ -22,7 +28,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         // QueryClientProvider lets us share cache with all the components it wraps
         <QueryClientProvider client={queryClient}>
             <Hydrate state={pageProps.dehydratedState}>
-                <Component {...pageProps} />
+                <main className={`${inter.variable} font-rub`}>
+                    <Component {...pageProps} />
+                </main>
+
             </Hydrate>
             <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
