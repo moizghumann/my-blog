@@ -23,7 +23,7 @@ const Showcase = () => {
 
                             <div>
                                 <Image src={game} alt='game-logo' height={70} width={70} />
-                                <h3 className='text-start font-semibold text-4xl text-[#0A0F19] py-4'>
+                                <h3 className='text-start font-semibold text-4xl text-[#0A0F19] pb-4 pt-1'>
                                     GameVerse
                                 </h3>
                                 <p className='text-[#0a0f19b0] w-[70%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore mollitia eos voluptas in? Voluptate exercitationem odit vero dolorem, suscipit ab facere maiores, est voluptas, incidunt sequi! Numquam culpa molestias nihil.</p>
@@ -33,14 +33,14 @@ const Showcase = () => {
                         </div>
                     </div>
                     <div className='col-span-3 bg-amber-300 rounded-xl'>
-                        <div className='m-1 p-8 flex flex-col justify-between items-start h-full'>
+                        <div className=' p-8 pb-14 flex flex-col justify-between items-start h-full'>
 
                             <div>
-                                <Image src={game} alt='game-logo' height={70} width={70} />
-                                <h3 className='text-start font-semibold text-4xl text-[#0A0F19] py-4'>
+                                <Image src={game} alt='game-logo' height={55} width={55} />
+                                <h3 className='text-start font-semibold text-3xl text-[#0A0F19] pb-3 pt-1'>
                                     GameVerse
                                 </h3>
-                                <p className='text-[#0a0f19b0] w-[70%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore mollitia eos voluptas in? Voluptate exercitationem odit vero dolorem, suscipit ab facere maiores, est voluptas, incidunt sequi! Numquam culpa molestias nihil.</p>
+                                <p className='text-[#0a0f19b0] w-[80%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore mollitia eos voluptas in? Voluptate exercitationem odit vero dolorem, suscipit ab facere maiores, est voluptas, incidunt sequi! Numquam culpa molestias nihil.</p>
                             </div>
                             <Button>deets</Button>
 
